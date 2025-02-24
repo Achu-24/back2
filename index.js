@@ -6,7 +6,7 @@ app.use(express.json())
 let login=[]
 
 app.get("/",(req,res)=>{
-    res.send("running")
+    res.send("Running Successfully")
 })
 
 app.post("/email",(req,res)=>{
