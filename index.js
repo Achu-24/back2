@@ -11,12 +11,12 @@ app.get("/",(req,res)=>{
 
 app.post("/email",(req,res)=>{
     login.push(req.body)
-    res.json({error:"email added successfully"})
+    res.json({error:"Email Added Successfully"})
 })
 
 app.post ("/password",(req,res)=>{
     login.push(req.body)
-    res.json({error:"password added successfully"})
+    res.json({error:"Password Added Successfully"})
 })
 
 app.get("/email",(req,res)=>{
@@ -28,28 +28,28 @@ app.get("/password",(req,res)=>{
 })
 
 app.get("/login/:id",(req,res)=>{
-    const login=login.find(b=>b.login_id==req.paramsms.id)
-    res.json(email||{error:"email not found"})
+    const login=login.find(b=>b.login_id==req.params.id)
+    res.json(email||{error:"Email Cannot Be Empty"})
 
 })
 
 app.get("/login/:id",(req,res)=>{
-    const login=login.find(b=>b.login_id==req.paramsms.id)
-    res.json(password||{error:"password not found"})
+    const login=login.find(b=>b.login_id==req.params.id)
+    res.json(password||{error:"Password Cannot Be Empty"})
 
 })
 
 app.put("/login/:id",(req,res)=>{
     const index=login.findIndex(b=>b.login_id==req.params.id)
     login[index]=req.body
-    res.json({message:"email updated"})
+    res.json({message:"Email Updated"})
 })
 
 app.put("/login/:id",(req,res)=>{
     const index=login.findIndex(b=>b.login_id==req.params.id)
     login[index]=req.body
-    res.json({message:"password updated"})
+    res.json({message:"Password Updated"})
 })
 
 app.listen(port,()=>{
-    console.log("login page successfully running at http://localhost//3000{port}")})
+    console.log("Login Page Successfully Running at http://localhost//3000{port}")})
